@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import { User } from '../../models/user';
 import {AngularFireAuth} from "angularfire2/auth";
-import { Facebook,FacebookLoginResponse } from '@ionic-native/facebook';
-import firebase from 'firebase';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -22,8 +21,7 @@ export class LoginPage {
   constructor(
     private afAuth: AngularFireAuth,
     public navCtrl: NavController,
-    public navParams: NavParams,
-    public facebook: Facebook) {
+    public navParams: NavParams) {
   }
 
  async login(user: User) {
@@ -31,7 +29,7 @@ export class LoginPage {
     const result= await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
     
     if(result){
-      this.navCtrl.setRoot('HomePage');
+      this.navCtrl.setRoot('FoodculturePage');
     }
   }
   catch(e){
@@ -43,15 +41,4 @@ export class LoginPage {
    this.navCtrl.push('RegisterPage');
  }
 
-loginfb(){
-this.facebook.login(['email'])  .then((loginResponse) =>{
-
- let credential = firebase.auth.FacebookAuthProvider.credential(loginResponse.authResponse.accessToken);
-
-      firebase.auth().signInWithCredential(credential).then((info) => { 
-         alert(JSON.stringify(info));
-         console.log("fuck")
-      })
-    })
-  }
 }
