@@ -1,0 +1,73 @@
+<!--
+  Generated template for the MainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Main</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  
+  <ion-grid id="main">
+    <ion-row>
+      <ion-col> 
+          <ion-card class="culture">
+
+              <img src="assets/imgs/culture.jpg" alt="">
+              <div class="card-title">Culture</div>
+              <div class="card-subtitle"></div>
+            </ion-card>
+
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col>
+            <ion-card (click)="drinksmain()"  class="drinks">
+                <img src="assets/imgs/drinks.jpg" alt="">
+                <div class="card-title">Drinks</div>
+                <div class="card-subtitle"></div>
+              </ion-card>
+        </ion-col>
+
+        <ion-col>
+            <ion-card (click)="breakfastmain()" class="breakfast">
+                <img src="assets/imgs/breakfast.jpg" alt="">
+                <div class="card-title">Breakfast</div>
+                <div class="card-subtitle"></div>
+              </ion-card>
+  
+        </ion-col>
+      </ion-row>
+
+      
+    <ion-row>
+        <ion-col>
+            <ion-card (click)="lunchmain()" class="lunch">
+                <img src="assets/imgs/lunch.jpg" alt="">
+                <div class="card-title">Lunch</div>
+                <div class="card-subtitle"></div>    
+              </ion-card>
+  
+        </ion-col>
+
+        <ion-col>
+            <ion-card (click)="dinnermain()" class="dinner">
+                <img src="assets/imgs/dinner.jpg" alt="">
+                <div class="card-title">Dinner</div>
+                <div class="card-subtitle"></div>
+              </ion-card>
+  
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -8,7 +8,16 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireAuthModule} from 'angularfire2/auth'; 
 import { Facebook } from '@ionic-native/facebook';
-
+import { FavPageModule } from '../pages/fav/fav.module';
+import { CameraPageModule } from '../pages/camera/camera.module';
+import { FeedPageModule } from '../pages/feed/feed.module';
+import { MainPageModule } from '../pages/main/main.module';
+import { PrimarytabsPageModule } from '../pages/primarytabs/primarytabs.module';
+import { CoffeePageModule } from '../pages/coffee/coffee.module';
+import { DrinksmainPageModule } from '../pages/drinksmain/drinksmain.module';
+import { LunchmainPageModule } from '../pages/lunchmain/lunchmain.module';
+import { BreakfastmainPageModule } from '../pages/breakfastmain/breakfastmain.module';
+import { DinnermainPageModule } from '../pages/dinnermain/dinnermain.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +28,16 @@ import { Facebook } from '@ionic-native/facebook';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
+    FavPageModule,
+    PrimarytabsPageModule,
+    CameraPageModule,
+    FeedPageModule,
+    MainPageModule,
+    CoffeePageModule,
+    DrinksmainPageModule,
+    LunchmainPageModule,
+    BreakfastmainPageModule,
+    DinnermainPageModule
 
   ],
   bootstrap: [IonicApp],

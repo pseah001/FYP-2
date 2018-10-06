@@ -29,7 +29,7 @@ export class LoginPage {
     const result= await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
     
     if(result){
-      this.navCtrl.setRoot('FoodculturePage');
+      this.navCtrl.setRoot('PrimarytabsPage');
     }
   }
   catch(e){

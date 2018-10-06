@@ -1,0 +1,55 @@
+page-drinksmain {
+    .card-md {
+        margin:0px;
+        width: calc(100%);
+    }
+
+
+    ion-card {
+        position: relative;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+      }
+
+    .grid {
+          padding:0px;
+      }
+
+    #drinksmain img:hover{
+        cursor: pointer;   
+      }
+
+
+    .card-title {
+        position: absolute;
+        top: 46%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+
+    .coffee{
+        height: 180px;
+    }
+
+    .tea{
+        height: 180px;
+    }
+
+    .milo{
+        height: 180px;
+    }
+
+    .sugarcane{
+
+        height: 180px;   
+    }
+    .bundung{
+        height: 180px;
+    }
+    .grassjelly{
+        height: 180px;
+    }
+}

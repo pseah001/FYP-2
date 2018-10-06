@@ -1,0 +1,56 @@
+page-main {
+    .card-md {
+        margin:0px;
+        width: calc(100%);
+    }
+
+
+    ion-card {
+        position: relative;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .grid {
+          padding:0px;
+      }
+      
+
+      .row{
+          padding: 5px;
+      }
+    
+      #main img:hover{
+        cursor: pointer;   
+      }
+
+    .card-title {
+        position: absolute;
+        top: 46%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+
+    .culture{
+        height: 200px;
+    }
+
+    .drinks{
+        height: 180px;
+    }
+
+    .breakfast{
+        height: 180px;
+    }
+
+    .lunch{
+
+        height: 180px;   
+    }
+    .dinner{
+        height: 180px;
+    }
+}

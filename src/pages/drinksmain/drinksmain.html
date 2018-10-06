@@ -1,0 +1,73 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Drinks</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ 
+    <ion-grid id="drinksmain">
+        <ion-row>
+          <ion-col> 
+              <ion-card (click)="coffee()" class="coffee">
+                  <img src="assets/imgs/kopi.jpg" alt="">
+                  <div class="card-title">Kopi|Coffee</div>
+                  <div class="card-subtitle"></div>
+                </ion-card>
+              </ion-col>
+          <ion-col>
+              <ion-card (click)="drinksmain()"  class="tea">
+                   <img src="assets/imgs/tea.jpg" alt="">
+                   <div class="card-title">Teh|Tea </div>
+                   <div class="card-subtitle"></div>
+               </ion-card>
+           </ion-col>
+    
+    
+        </ion-row>
+    
+        <ion-row>
+            <ion-col>
+                <ion-card (click)="drinksmain()"  class="milo">
+                    <img src="assets/imgs/milo.jpg" alt="">
+                    <div class="card-title">Milo</div>
+                    <div class="card-subtitle"></div>
+                  </ion-card>
+            </ion-col>
+    
+            <ion-col>
+                <ion-card (click)="breakfastmain()" class="sugarcane">
+                    <img src="assets/imgs/sugarcanejuice.jpg" alt="">
+                    <div class="card-title">Sugarcane</div>
+                    <div class="card-subtitle"></div>
+                  </ion-card>
+      
+            </ion-col>
+          </ion-row>
+    
+          
+        <ion-row>
+            <ion-col>
+                <ion-card (click)="lunchmain()" class="bundung">
+                    <img src="assets/imgs/bundung.jpg" alt="">
+                    <div class="card-title">Bundung</div>
+                    <div class="card-subtitle"></div>    
+                  </ion-card>
+      
+            </ion-col>
+    
+            <ion-col>
+                <ion-card (click)="dinnermain()" class="grassjelly">
+                    <img src="assets/imgs/grassjelly.jpg" alt="">
+                    <div class="card-title">Chinchow|Grassjelly</div>
+                    <div class="card-subtitle"></div>
+                  </ion-card>
+      
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    
+</ion-content>

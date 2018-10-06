@@ -11,6 +11,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="*" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
@@ -20,6 +21,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <platform name="android">
+        <preference name="loadUrlTimeoutValue" value="700000" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
@@ -84,4 +86,8 @@
     <plugin name="cordova-plugin-media-capture" spec="^3.0.2" />
     <plugin name="cordova-plugin-media" spec="^5.0.2" />
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
+    <allow-navigation href="http://10.27.73.169:8100" />
+    <allow-navigation href="http://192.168.1.32:8100" />
+    <allow-navigation href="http://localhost:8100" />
+    <plugin name="cordova-plugin-nativeaudio" spec="^3.0.9" />
 </widget>

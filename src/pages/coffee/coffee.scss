@@ -1,0 +1,62 @@
+page-coffee {
+    .card-md {
+        margin:0px;
+        width: calc(100%);
+    }
+
+
+    ion-card {
+        position: relative;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+      }
+
+    ion-range{
+        padding: 0px;
+    }
+
+      .grid {
+          padding:0px;
+      }
+
+
+    .card-title {
+        position: absolute;
+        top: 100%;
+        font-size: 1em;
+        width: 100%;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+      }
+
+    .title{
+        font-size: 12px;
+    }
+
+    .kopio{
+    height: 160px;
+    }
+
+    .kopio img{
+    margin: auto;
+    }
+
+    .kopic{
+    height: 160px;
+    }
+    .sweetnesslevel{
+        padding-right: 0px;
+        float: right;
+    }
+    .sugar{
+        padding: 0px;
+        padding-top: 5px;
+
+        margin: 0px;
+    }
+    .range-md {
+        padding: 0px;
+    }
+}
