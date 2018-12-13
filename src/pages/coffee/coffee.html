@@ -1,9 +1,4 @@
-<!--
-  Generated template for the CoffeePage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -22,61 +17,47 @@
           <p>Typically Served in thick white china cups or a to go plastic bag</p>
 
       </ion-row>
-      <ion-row>
-         <ion-col> 
-             <ion-card class="kopio">
-                <ion-row>                  
-                  <ion-col col-4>
-                  <img src="assets/imgs/kopio.jpg" alt="">
-                  <div class="card-title">{{ kopiosugarvalue }}</div>
-                  <div class="card-subtitle"></div>
-                </ion-col>
+   
 
-                <ion-col col-8>
-                  <ion-label>
-                    <p class="title">Kopi-O is known as a sweetened black coffee <br>Closest Relation: Sweetened Americano</p>
+<!-- for loop row! -->
 
-                  
-                  </ion-label>
-                    <ion-item>
-                       <ion-label class="sugar">Sugar level </ion-label> 
-                       <ion-range min="0" max="30" step="10" snaps="true" color="secondary" [(ngModel)]="kopiosugarlevel" (ngModelChange)="onChangekopioSugar($event)">
-                          <ion-label range-left>0%</ion-label>
-                          <ion-label range-right>100%</ion-label>
-                       </ion-range>
-                    </ion-item>
-                </ion-col>  
-              </ion-row>
-              </ion-card>
-            </ion-col>
-        </ion-row>
+            <ion-row>
+              <ion-col> 
+                  <ion-card class="kopio" *ngFor="let item of CoffeeCards; let i = index;trackBy:trackByIndex;">
+                     <ion-row>                  
+                       <ion-col col-4>
+                       
+                       <img src="{{item.photo}}" alt="">
+                       
+                       <div class="card-title">{{item.name}}{{ kopisugarvalue }}
+<!--                           <p *ngIf="i == 0">{{ kopisugarvalue }}</p>
+                          <p *ngIf="i == 1">{{ kopisugarvalue1 }}</p> -->
 
-              <ion-row>
-                  <ion-col> 
-                      <ion-card class="kopic">
-                        <ion-row>                 
-                          <ion-col col-4>
-                          <img src="assets/imgs/kopio.jpg" alt="">
-                          <div class="card-title">{{ kopicsugarvalue }}</div>
-                          <div class="card-subtitle"></div>
-                        </ion-col>
-        
-                        <ion-col col-8>
-                            <ion-item>
-                               <ion-label class="sugar">Sugar level </ion-label> 
-                               <ion-range min="0" max="30" step="10" snaps="true" color="secondary" [(ngModel)]="kopicsugarlevel" (ngModelChange)="onChangekopicSugar($event)">
-                                  <ion-label range-left>0%</ion-label>
-                                  <ion-label range-right>100%</ion-label>
-                               </ion-range>
-        
-                            </ion-item>
-                        </ion-col>  
-                      </ion-row>
-                      </ion-card>
-                      </ion-col>
-                      </ion-row>
+                       </div>
+                       <div class="card-subtitle"></div>
+                     </ion-col>
+     
+                     <ion-col col-8>
+                       <ion-label>
+                         <p class="title"> {{ item.description }}</p>
+                         <p class="title"> {{ item.relation }}</p>
+                         <p class="title"> {{ i }}</p>
+                       </ion-label>
+                         <ion-item>
+                            <ion-label class="sugar">Sugar level </ion-label> 
+                            <ion-range min="0" max="30" step="10" snaps="true" color="secondary"
+                              [(ngModel)]="kopisugarlevel"
+                              (ngModelChange)="onChangekopiSugar(i)">
+                               <ion-label range-left>0%</ion-label>
+                               <ion-label range-right>100%</ion-label>
+                            </ion-range>
+                         </ion-item>
+                     </ion-col>  
+                   </ion-row>
+                   </ion-card>
+                 </ion-col>
+             </ion-row>
 
-    
   </ion-grid>
 
 </ion-content>

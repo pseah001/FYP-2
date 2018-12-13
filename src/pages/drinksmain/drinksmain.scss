@@ -1,55 +1,102 @@
 page-drinksmain {
-    .card-md {
-        margin:0px;
-        width: calc(100%);
-    }
-
-
-    ion-card {
-        position: relative;
-        text-align: center;
-        padding: 0px;
-        margin: 0px;
-      }
-
-    .grid {
-          padding:0px;
-      }
-
-    #drinksmain img:hover{
-        cursor: pointer;   
-      }
-
-
-    .card-title {
-        position: absolute;
-        top: 46%;
-        font-size: 2.0em;
+    ion-card img {
+        display: block;
         width: 100%;
-        font-weight: bold;
-        color: #fff;
-      }
-
-    .coffee{
-        height: 180px;
+        height: 100% !important;
+    }
+    #header{
+        height: 120px;
+    }
+    .welcome{
+        position: absolute;
+        top: 8%;
+        font-size: 30px;
+        width: 100%;
+        font-weight: 900;
+        left: 10%;
+        color: color($colors, primary);
+        font-family: Open sans;
+        letter-spacing: 1px;
+        transform: scale(1, 1.2);   
+        text-transform: uppercase;
+        padding: 10px;
+    }
+    .appname{
+        position: absolute;
+        top: 12%;
+        font-size: 20px;
+        width: 100%;
+        font-weight: 400;
+        left: 10%;
+        color: color($colors, secondary);
+        font-family: Open sans;
+        letter-spacing: 1px;
+        transform: scale(1, 1.1); 
+        margin-top: 2px;
+        padding:10px;
+    }
+    .content-md {
+        color: #000;
+        background-color: #FDFBFA;
+    }
+    .filter{
+        width: 70%;
+        border-radius: 5px;
+        margin-left: 15%;
+        margin-right: 15%;
     }
 
-    .tea{
-        height: 180px;
+    .filtername{
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        font-family: Open Sans;
+        margin-bottom: 0px !important;
+        padding-top: 10px;
+        color: color($colors, dark);
     }
 
-    .milo{
-        height: 180px;
+    .bfcard{
+        width: 320px;
+        height: 230px;
+        border-radius: 10px;
+        box-shadow: 0 3px 3px rgba(0,0,0,0.19);
+        margin: auto;
+        margin-top: 60px;
+        margin-bottom: 60px;
+
     }
 
-    .sugarcane{
+    .info{
+        border-radius: 50px;
+        -webkit-box-shadow: 5px;
+        box-shadow: 5px;
+        margin-top: -12%;
+        /* border: solid 1px#FCC329; */
+        z-index: 3;
+        position: absolute;
+        padding: 15px 40px;
+        /* justify-content: center; */
+        margin-left: 50px;
+        width: 220px;
+        background-color: white;
+        box-shadow: 0 3px 3px rgba(0,0,0,0.19);
+    }
 
-        height: 180px;   
+    .name{
+        margin-top: 0px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        font-family: Open Sans;
+        color:color($colors, primary);
+        text-transform: uppercase;
     }
-    .bundung{
-        height: 180px;
-    }
-    .grassjelly{
-        height: 180px;
+    .cuisine{
+        color:#4F5153;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: Open Sans;
     }
 }

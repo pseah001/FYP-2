@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase} from "angularfire2/database"; 
 
-/**
- * Generated class for the CoffeePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,36 +10,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   
 })
 export class CoffeePage {
-
-  kopiosugarlevel: any;
-  kopicsugarlevel: any;
-  kopiosugarvalue: any;
-  kopicsugarvalue: any;
-  textChangeSugar: any;
+  CoffeeCards: any;
+  kopisugarlevel: any[] /* { '0': 0 } */;
+  kopisugarvalue1: any/* { '0': 0 } */;
+  kopisugarvalue: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.textChangeSugar = ["-Kosong", "-Siew-Dai", "", "-Gah-Dai"];
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, public database: AngularFireDatabase
+    ) {
+      // retrieve data from CoffeeCards in firebase
+      database.list('/CoffeeCards').valueChanges().subscribe(
+        list=> {
+          this.CoffeeCards = list;
+      });
+  }
+
+  onChangekopiSugar($index) {
+ /* console.log($index);
+    console.log(this.kopisugarlevel);
+    console.log(this.kopisugarvalue); */
+
+      if (this.kopisugarlevel[$index] == 10) { this.kopisugarvalue = "-Siew-Dai" }
+      if (this.kopisugarlevel[$index] == 20) { this.kopisugarvalue = "" }
+      if (this.kopisugarlevel[$index] == 30) { this.kopisugarvalue =  "-Gah-Dai"}
+      if (this.kopisugarlevel[$index] == 0) { this.kopisugarvalue= "-Kosong" }
 
   }
-  onChangekopioSugar() {
-    if (this.kopiosugarlevel == 0) { this.kopiosugarvalue = "kopi-O"+ this.textChangeSugar[0] }
-    if (this.kopiosugarlevel == 10) { this.kopiosugarvalue = "kopi-O"+ this.textChangeSugar[1] }
-    if (this.kopiosugarlevel == 20) { this.kopiosugarvalue = "kopi-O"+ this.textChangeSugar[2] }
-    if (this.kopiosugarlevel == 30) { this.kopiosugarvalue = "kopi-O"+ this.textChangeSugar[3] }
 
-}
-onChangekopicSugar() {
-  if (this.kopicsugarlevel == 0) { this.kopicsugarvalue = "kopi-C"+ this.textChangeSugar[0] }
-  if (this.kopicsugarlevel == 10) { this.kopicsugarvalue = "kopi-C"+ this.textChangeSugar[1] }
-  if (this.kopicsugarlevel == 20) { this.kopicsugarvalue = "kopi-C"+ this.textChangeSugar[2] }
-  if (this.kopicsugarlevel == 30) { this.kopicsugarvalue = "kopi-C"+ this.textChangeSugar[3] }
-
-}
-  
+  trackByIdx(index, obj) {
+    return index;
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CoffeePage');
   }
-
 }

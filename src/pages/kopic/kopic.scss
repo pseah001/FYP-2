@@ -1,0 +1,148 @@
+page-kopic {
+    .scroll-content{
+        margin-top: -25px!important;
+    }
+    ion-icon{
+        font-size: 30px;
+        margin-top: 10px;
+        z-index: 2;
+        position: absolute;
+        padding: 20px;
+    }
+    .mainimg{
+        width: 100%;
+        height: 45%;
+        margin-top: -20px;
+    }
+
+    .dimsum{
+        width: 100%;
+        height: auto;
+        margin: auto;
+        margin-top: 20px;
+        
+    }
+
+    .info{
+        margin-top: 20px;
+        width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        position: absolute;
+        z-index: 3;
+        border-radius: 10px;
+        height: auto;
+         box-shadow: 2px 3px 3px 3px rgba(0,0,0,0.1);
+
+    }
+
+    .name{
+        text-align: left;
+        font-size: 25px;
+        font-weight: 700;
+        font-family: Open Sans;
+        letter-spacing: 1px;
+        transform: scale(1, 1.2);
+    }
+    .coin{
+        width: 28px;
+        height: 28px;
+        float: right;
+        margin: 5px;
+    }
+    .dietary{
+        width: 28px;
+        height: 28px;
+    }
+    .cuisine{
+        border: 2px solid #ffcc00;
+        width: 80px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        font-family: Open Sans;
+    }
+
+    .what{
+        padding: 5px 0px;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+        font-family: Open Sans;
+        color:#4F5153;
+    }
+    .description{
+        padding: 5px 0px;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+        font-family: Open Sans;
+        color:#4F5153;
+    }
+
+
+    .header{
+        font-size: 16px;
+        font-weight: 600;
+        font-family: Open Sans;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+    .segment-md .segment-button{
+        color: #D24D57;
+        border-radius: 5px;
+    }
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        border-color:#D24D57;
+        background-color: #D24D57;
+        opacity: 1;
+        color:white;
+    }
+
+    .history{
+        padding: 5px 0px;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+        font-family: Open Sans;
+        color:#4F5153;
+    }
+
+    .origin img{
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        float: left;
+    
+    }
+    .chopsticks{
+        padding-top: 10px;
+    }
+    .chopsticks img{
+        width: 28px !important;
+        height: 28px !important;
+    }
+    .country{
+        padding-top: 8px;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        font-family: Open Sans;
+        color: color($colors, dark);
+        
+
+    }
+    .variety img{
+        width: 28px;
+        height: 28px;
+    }
+    .fav{
+        padding-top: 20px !important;
+    }
+
+    .heart{
+        margin-top: 0px !important;
+        background-color:  color($colors, danger) !important;
+    }
+}

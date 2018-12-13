@@ -9,5 +9,6 @@ import { BreakfastmainPage } from './breakfastmain';
   imports: [
     IonicPageModule.forChild(BreakfastmainPage),
   ],
+
 })
 export class BreakfastmainPageModule {}

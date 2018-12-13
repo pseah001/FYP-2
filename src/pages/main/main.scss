@@ -1,4 +1,31 @@
 page-main {
+    #header{
+        height: 180px;
+    }
+    .welcome{
+        position: absolute;
+        top: 6%;
+        font-size: 30px;
+        width: 100%;
+        font-weight: 900;
+        left: 10%;
+        color: color($colors, primary);
+        font-family: Open sans;
+        letter-spacing: 1px;
+        transform: scale(1, 1.2);   
+    }
+    .appname{
+        position: absolute;
+        top: 11%;
+        font-size: 24px;
+        width: 100%;
+        font-weight: 400;
+        left: 10%;
+        color: color($colors, secondary);
+        font-family: Open sans;
+        letter-spacing: 1px;
+        transform: scale(1, 1.1); 
+    }
     .card-md {
         margin:0px;
         width: calc(100%);
@@ -10,15 +37,19 @@ page-main {
         text-align: center;
         padding: 0px;
         margin: 0px;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1)!important;
       }
 
       .grid {
           padding:0px;
       }
       
+      .col{
+          padding: 0px;
+      }
 
       .row{
-          padding: 5px;
+        padding: 10px 26px;
       }
     
       #main img:hover{
@@ -27,30 +58,44 @@ page-main {
 
     .card-title {
         position: absolute;
-        top: 46%;
-        font-size: 2.0em;
+        top: 42%;
+        font-size: 26px;
         width: 100%;
-        font-weight: bold;
-        color: #fff;
+        font-weight: 600;
+        left: -15%;
+        color: color($colors, dark);
+        font-family: Open sans;
+        letter-spacing: 0.5px;
+        transform: scale(1, 1.1);   
       }
 
+      .card-title-white {
+        position: absolute;
+        top: 42%;
+        font-size: 26px;
+        width: 100%;
+        font-weight: 600;
+        left: 18%;
+        color: #fff;
+        font-family: Open sans;
+        letter-spacing: 0.5px;
+        transform: scale(1, 1.1);  
+      }
     .culture{
-        height: 200px;
+        height:auto;
     }
 
     .drinks{
-        height: 180px;
+        height:auto;
     }
 
     .breakfast{
-        height: 180px;
+        height:auto;
     }
 
-    .lunch{
+    .lunchdinner{
 
-        height: 180px;   
+        height:auto;  
     }
-    .dinner{
-        height: 180px;
-    }
+
 }

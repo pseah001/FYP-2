@@ -1,0 +1,36 @@
+page-culture {
+.cards{
+    height: 600px;
+    margin-top: 60px;
+}
+
+.class1 img{
+    width: 100px !important;
+    height: 100px !important;
+}
+.swiper-slide img {
+    width: auto;
+    max-width: 30%;
+    height: auto;
+    max-height: 50%;
+    margin-top: 10px;
+}
+.class1 h2{
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: Open Sans;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    padding: 0px 30px;
+}
+
+.class1 p{
+    padding: 10px 30px;
+    font-size: 22px;
+    font-family: Open Sans;
+    font-weight: 400;
+    color: white;
+
+}
+}

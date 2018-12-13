@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DrinksmainPage } from '../drinksmain/drinksmain';
 import { BreakfastmainPage } from '../breakfastmain/breakfastmain';
-import { LunchmainPage } from '../lunchmain/lunchmain';
-import { DinnermainPage } from '../dinnermain/dinnermain';
+import { LunchdinnermainPage } from '../lunchdinnermain/lunchdinnermain';
+import { CulturePage } from '../culture/culture';
+
 
 /**
  * Generated class for the MainPage page.
@@ -23,6 +24,9 @@ export class MainPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  culturemain(){
+    this.navCtrl.setRoot(CulturePage);
+  }
   drinksmain(){
     this.navCtrl.setRoot(DrinksmainPage);
   }
@@ -30,14 +34,10 @@ export class MainPage {
     this.navCtrl.setRoot(BreakfastmainPage);
   }
   
-  lunchmain(){
-    this.navCtrl.setRoot(LunchmainPage);
+  lunchdinnermain(){
+    this.navCtrl.setRoot(LunchdinnermainPage);
   }
-  dinnermain(){
-    this.navCtrl.setRoot(DinnermainPage);
-  }
-  
-  
+
   
 
 

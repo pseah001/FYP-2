@@ -1,73 +1,47 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Drinks</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
- 
-    <ion-grid id="drinksmain">
+        <div id="header">
+            <h1 class="welcome">Drinks</h1>
+            <p class="appname">Suggestions</p>
+        </div>  
+      <ion-row>
+          <ion-col col-sm-6><h4 class="filtername">Type</h4></ion-col>
+          <ion-col col-sm-6><h4 class="filtername">Diets</h4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-sm-6>  
+            <select class="filter" [(ngModel)]="Type" (change)="filterExact('Type', Type)">
+              <option value="Chinese">Coffee</option>
+              <option value="Indian">Tea</option>
+              <option value="Malay">Milo</option>
+              <option value="Malay">Assortments</option>
+            </select>
+            <button *ngIf="Type" (click)="removeFilter('Type')">Remove Type</button>
+        </ion-col>
+        <ion-col col-sm-6>
+            <select class="filter" [(ngModel)]="diets" (change)="filterExact('diets', diets)">
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Gluten-Free">Gluten-Free</option>
+              <option value="Peanut-Free">Peanut-Free</option>
+            </select>
+            <button *ngIf="diets" (click)="removeFilter('diets')">Remove Dietary Restrictions</button>
+        </ion-col>  
+    </ion-row>
+      <ion-grid>
+
         <ion-row>
           <ion-col> 
-              <ion-card (click)="coffee()" class="coffee">
-                  <img src="assets/imgs/kopi.jpg" alt="">
-                  <div class="card-title">Kopi|Coffee</div>
-                  <div class="card-subtitle"></div>
-                </ion-card>
-              </ion-col>
-          <ion-col>
-              <ion-card (click)="drinksmain()"  class="tea">
-                   <img src="assets/imgs/tea.jpg" alt="">
-                   <div class="card-title">Teh|Tea </div>
-                   <div class="card-subtitle"></div>
-               </ion-card>
-           </ion-col>
     
-    
+            <ion-card  class="bfcard" *ngFor="let item of FilteredBreakfastCards; let i = index; ">
+              <img (click)="direct(item.name)" src="{{ item.photo }}" alt="">
+              <div class="info" >
+                <h2 class="name">{{ item.name }}</h2>
+                 <h3 class="cuisine">{{ item.type }}</h3>  
+              </div>
+              
+            </ion-card>
+          </ion-col>
         </ion-row>
-    
-        <ion-row>
-            <ion-col>
-                <ion-card (click)="drinksmain()"  class="milo">
-                    <img src="assets/imgs/milo.jpg" alt="">
-                    <div class="card-title">Milo</div>
-                    <div class="card-subtitle"></div>
-                  </ion-card>
-            </ion-col>
-    
-            <ion-col>
-                <ion-card (click)="breakfastmain()" class="sugarcane">
-                    <img src="assets/imgs/sugarcanejuice.jpg" alt="">
-                    <div class="card-title">Sugarcane</div>
-                    <div class="card-subtitle"></div>
-                  </ion-card>
-      
-            </ion-col>
-          </ion-row>
-    
-          
-        <ion-row>
-            <ion-col>
-                <ion-card (click)="lunchmain()" class="bundung">
-                    <img src="assets/imgs/bundung.jpg" alt="">
-                    <div class="card-title">Bundung</div>
-                    <div class="card-subtitle"></div>    
-                  </ion-card>
-      
-            </ion-col>
-    
-            <ion-col>
-                <ion-card (click)="dinnermain()" class="grassjelly">
-                    <img src="assets/imgs/grassjelly.jpg" alt="">
-                    <div class="card-title">Chinchow|Grassjelly</div>
-                    <div class="card-subtitle"></div>
-                  </ion-card>
-      
-            </ion-col>
-          </ion-row>
       </ion-grid>
+    </ion-content>
     
-</ion-content>
+

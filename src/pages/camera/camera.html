@@ -14,5 +14,22 @@
 
 
 <ion-content padding>
+  <div class="wrapper">
+    <div padding text-center>
+      <img class="photo" src="{{currentImage}} "/>
+
+      <a href="{{someTextUrl}}">Get some text there</a>
+      <ion-card *ngFor="let photo of photos">
+          <img src="{{photo}}" />
+        </ion-card>
+    <ion-fab bottom center >
+        <button class="camera" (click)="takephoto()" ion-fab>Photo</button>
+    </ion-fab>
+
+    <ion-fab bottom center>
+        <button class="gallery" (click)="presentActionSheet()" ion-fab>Gallery</button>
+    </ion-fab>
+    </div>
+  </div>    
 
 </ion-content>

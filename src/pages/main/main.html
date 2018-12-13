@@ -1,27 +1,17 @@
-<!--
-  Generated template for the MainPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Main</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
 <ion-content no-padding>
-  
+  <div id="header">
+  <h1 class="welcome">Welcome To</h1>
+  <p class="appname">SG Hawk&Chope</p>
+  </div>  
   <ion-grid id="main">
     <ion-row>
       <ion-col> 
-          <ion-card class="culture">
+          <ion-card class="culture" (click)="culturemain()">
 
               <img src="assets/imgs/culture.jpg" alt="">
-              <div class="card-title">Culture</div>
+              <div class="card-title-white">Cultural Tips</div>
               <div class="card-subtitle"></div>
             </ion-card>
 
@@ -33,15 +23,16 @@
         <ion-col>
             <ion-card (click)="drinksmain()"  class="drinks">
                 <img src="assets/imgs/drinks.jpg" alt="">
-                <div class="card-title">Drinks</div>
+                <div class="card-title">Beverages</div>
                 <div class="card-subtitle"></div>
               </ion-card>
         </ion-col>
-
+      </ion-row>
+      <ion-row>
         <ion-col>
             <ion-card (click)="breakfastmain()" class="breakfast">
                 <img src="assets/imgs/breakfast.jpg" alt="">
-                <div class="card-title">Breakfast</div>
+                <div class="card-title-white">Breakfast</div>
                 <div class="card-subtitle"></div>
               </ion-card>
   
@@ -51,22 +42,14 @@
       
     <ion-row>
         <ion-col>
-            <ion-card (click)="lunchmain()" class="lunch">
-                <img src="assets/imgs/lunch.jpg" alt="">
-                <div class="card-title">Lunch</div>
+            <ion-card (click)="lunchdinnermain()" class="lunchdinner">
+                <img src="assets/imgs/lunchdinner.jpg" alt="">
+                <div class="card-title">Lunch & Dinner</div>
                 <div class="card-subtitle"></div>    
               </ion-card>
   
         </ion-col>
 
-        <ion-col>
-            <ion-card (click)="dinnermain()" class="dinner">
-                <img src="assets/imgs/dinner.jpg" alt="">
-                <div class="card-title">Dinner</div>
-                <div class="card-subtitle"></div>
-              </ion-card>
-  
-        </ion-col>
       </ion-row>
   </ion-grid>
 

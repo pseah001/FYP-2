@@ -4,15 +4,49 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>breakfastmain</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
 <ion-content padding>
+    <div id="header">
+        <h1 class="welcome">Breakfast</h1>
+        <p class="appname">Suggestions</p>
+    </div>  
+  <ion-row>
+      <ion-col col-sm-6><h4 class="filtername">Cuisine</h4></ion-col>
+      <ion-col col-sm-6><h4 class="filtername">Diets</h4></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-sm-6>  
+        <select class="filter" [(ngModel)]="cuisine" (change)="filterExact('cuisine', cuisine)">
+          <option value="Chinese">Chinese</option>
+          <option value="Indian">Indian</option>
+          <option value="Malay">Malay</option>
+        </select>
+        <button *ngIf="cuisine" (click)="removeFilter('cuisine')">Remove Cuisine</button>
+    </ion-col>
+    <ion-col col-sm-6>
+        <select class="filter" [(ngModel)]="diets" (change)="filterExact('diets', diets)">
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Gluten-Free">Gluten-Free</option>
+          <option value="Peanut-Free">Peanut-Free</option>
+        </select>
+        <button *ngIf="diets" (click)="removeFilter('diets')">Remove Dietary Restrictions</button>
+    </ion-col>  
+</ion-row>
+  <ion-grid>
+<!--       <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
+    <ion-row>
+      <ion-col> 
 
+        <ion-card  class="bfcard" *ngFor="let item of FilteredBreakfastCards; let i = index; ">
+          <img (click)="direct(item.name)" src="{{ item.photo }}" alt="">
+          <div class="info" >
+            <h2 class="name">{{ item.name }}</h2>
+             <h3 class="cuisine">{{ item.cuisine }}</h3>  
+          </div>
+          
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

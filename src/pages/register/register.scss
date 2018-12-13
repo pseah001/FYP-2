@@ -1,3 +1,45 @@
 page-register {
+    .wrapper{
+        padding: 300px 50px;
+        background-color: color($colors, danger);
+        height: 100%;
+    }
+    ion-item{
+        border-radius: 5px;
+        margin-bottom: 10px !important;
+    }
+
+    hr{
+        border-top: 1px solid white !important;
+        margin-top: 30px;
+    }
+
+    ion-card-header.card-header {
+		color: #fff!important;
+    }
+    .text-input, {
+        color: black;
+    }
+    a,	ion-card-header.card-header {
+
+        text-align: center;
+        padding-top: 20px;
+        font-size: 18px;
+    }
+    p,
+	ion-card-header.card-header {
+        color: #fff!important;
+        text-align: center;
+        padding-top: 20px;
+        font-size: 16px;
+	}
+    button {
+        background-color: white !important;
+        color: color($colors, primary)!important;
+        margin: auto!important;
+        font-size: 16px!important;
+        margin-top: 20px!important;     
+    }
+
 
 }

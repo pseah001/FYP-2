@@ -34,13 +34,43 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #F3954C,
+  primary:    #FCC329,
   secondary:  #DCD2CA,
-  danger:     #EDC272,
-  light:      #F4F3F0,
-  dark:       #3B312F
+  danger:     #D24D57,
+  light:      #FDFBFA,
+  dark:       #222425
 );
 
+//tabs
+
+$tabs-md-tab-min-height: 7
+0px;
+$tabs-md-tab-icon-size: 2em;
+
+
+.tabs-md .tab-button[aria-selected=true] .icon {
+  color: color($colors, danger) !important; /*your  text color */
+  background: color($colors, light) !important; /* your background color*/
+  // font-size: 40px;
+}
+
+.tabs-md .tab-button[aria-selected=false] .icon {  
+  color:#4F5153 !important; /* your background color*/
+  background: #ffffff !important; /* your background coor*/
+  // font-size: 40px;
+}
+
+.tabs-md .tab-button[aria-selected=false] {  
+  color:#4F5153 !important; /* your background color*/
+  // font-size: 40px;
+  // background: #ffffff !important; /* your background color*/
+}
+
+.tabs-md .tab-button[aria-selected=true] {
+  color: color($colors, danger)!important; /*your  text color */
+  background: color($colors, light); /* your background color*/
+  // font-size: 40px;
+}
 
 // App iOS Variables
 // --------------------------------------------------
@@ -86,3 +116,23 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/font/Open_Sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: semi-bold;
+  font-weight: 600;
+  src: url('../assets/font/Open_Sans/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: bold;
+  font-weight: 700;
+  src: url('../assets/font/Open_Sans/OpenSans-Bold.ttf');
+}

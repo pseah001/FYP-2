@@ -21,6 +21,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <platform name="android">
+        <framework src="com.facebook.android:facebook-android-sdk:4.25.0" />
         <preference name="loadUrlTimeoutValue" value="700000" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -90,4 +91,18 @@
     <allow-navigation href="http://192.168.1.32:8100" />
     <allow-navigation href="http://localhost:8100" />
     <plugin name="cordova-plugin-nativeaudio" spec="^3.0.9" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-compat" spec="^1.2.0" />
+    <allow-navigation href="http://192.168.1.33:8100" />
+    <plugin name="com.darktalker.cordova.screenshot" spec="^0.1.6" />
+    <plugin name="cordova-plugin-crop" spec="^0.4.0" />
+    <plugin name="cordova-plugin-telerik-imagepicker" spec="^2.2.2">
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="your usage message" />
+    </plugin>
+    <plugin name="cordova-plugin-facebook4" spec="^2.5.0">
+        <variable name="APP_ID" value="689572964760880" />
+        <variable name="APP_NAME" value="FYP" />
+    </plugin>
+    <allow-navigation href="http://192.168.56.1:8100" />
+    <engine name="browser" spec="5.0.4" />
 </widget>
