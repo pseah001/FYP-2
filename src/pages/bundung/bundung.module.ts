@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { KopicPage } from './kopic';
+import { BundungPage } from './bundung';
 
 @NgModule({
   declarations: [
-    KopicPage,
+    BundungPage,
   ],
   imports: [
-    IonicPageModule.forChild(KopicPage),
+    IonicPageModule.forChild(BundungPage),
   ],
 })
-export class KopicPageModule {}
+export class BundungPageModule {}

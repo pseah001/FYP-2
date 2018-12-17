@@ -4,7 +4,7 @@ import { User } from '../../models/user';
 import {AngularFireAuth} from "angularfire2/auth";
 import { AuthService } from '../core/auth.service';
 import { PrimarytabsPage } from '../primarytabs/primarytabs';
-import { NgForm } from '@angular/forms';
+
 @IonicPage() 
 @Component({
   selector: 'page-register',
@@ -30,6 +30,11 @@ export class RegisterPage {
   //     this.errorMessage = err.message;
   //   });
   // }
+
+  //back
+  back(){
+    this.navCtrl.pop();
+  }
 
   tryGoogleLogin(){
     this.authService.doGoogleLogin()

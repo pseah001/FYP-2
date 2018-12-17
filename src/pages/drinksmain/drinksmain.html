@@ -9,13 +9,13 @@
       </ion-row>
       <ion-row>
         <ion-col col-sm-6>  
-            <select class="filter" [(ngModel)]="Type" (change)="filterExact('Type', Type)">
-              <option value="Chinese">Coffee</option>
-              <option value="Indian">Tea</option>
-              <option value="Malay">Milo</option>
-              <option value="Malay">Assortments</option>
+            <select class="filter" [(ngModel)]="type" (change)="filterExact('type', type)">
+              <option value="Coffee">Coffee</option>
+              <option value="Tea">Tea</option>
+              <option value="Milo">Milo</option>
+              <option value="Assortments">Assortments</option>
             </select>
-            <button *ngIf="Type" (click)="removeFilter('Type')">Remove Type</button>
+            <button *ngIf="type" (click)="removeFilter('type')">Remove Type</button>
         </ion-col>
         <ion-col col-sm-6>
             <select class="filter" [(ngModel)]="diets" (change)="filterExact('diets', diets)">

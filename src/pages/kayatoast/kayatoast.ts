@@ -18,7 +18,7 @@ export class KayatoastPage {
   
      // retrieve data from BreakfastCards in firebase
      database.list('/BreakfastCards',
-    ref => ref.orderByChild('name').equalTo('Kaya Toast'))
+    ref => ref.orderByChild('name').equalTo('toast'))
    
     .valueChanges().subscribe(
       list=> {
@@ -44,6 +44,17 @@ export class KayatoastPage {
   firebase.database().ref(`/BreakfastCards/toast`).once('value').then(snapshot => {
       console.log(snapshot.val().name );
       this.favorite = this.favoriteservice.addFavorite(snapshot.val().name);
+      
+      console.log(snapshot.val().cuisine );
+       //create fav in database with specific userid as keys
+      var database =firebase.database();
+      var userId = firebase.auth().currentUser.uid;
+      var ref =database.ref('fav/'+ userId);
+      //grab dimsum as key
+      var childKey = snapshot.child("/BreakfastCards/toast").key; 
+      console.log(childKey );
+      //push selected fav's info into fav db
+      ref.child(childKey).set(snapshot.val());
   });
   }
 

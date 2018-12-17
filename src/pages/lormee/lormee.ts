@@ -28,6 +28,15 @@ export class LormeePage {
     firebase.database().ref(`/LunchdinnerCards/Lor Mee`).once('value').then(snapshot => {
     console.log(snapshot.val().name );
     this.favorite = this.favoriteservice.isFavorite(snapshot.val().name);
+        //create fav in database with specific userid as keys
+   var database =firebase.database();
+   var userId = firebase.auth().currentUser.uid;
+   var ref =database.ref('fav/'+ userId);
+   //grab dimsum as key
+   var childKey = snapshot.child("/LunchdinnerCards/Lor Mee").key; 
+   console.log(childKey );
+   //push selected fav's info into fav db
+   ref.child(childKey).set(snapshot.val());
   });
  
 }

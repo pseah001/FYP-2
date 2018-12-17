@@ -25,7 +25,7 @@ export class RotiprataPage {
 
     // retrieve data from BreakfastCards in firebase
     database.list('/BreakfastCards',
-    ref => ref.orderByChild('name').equalTo('Roti Prata'))
+    ref => ref.orderByChild('name').equalTo('prata'))
    
     .valueChanges().subscribe(
       list=> {
@@ -51,6 +51,16 @@ export class RotiprataPage {
   firebase.database().ref(`/BreakfastCards/prata`).once('value').then(snapshot => {
       console.log(snapshot.val().name );
       this.favorite = this.favoriteservice.addFavorite(snapshot.val().name);
+      console.log(snapshot.val().cuisine );
+      //create fav in database with specific userid as keys
+     var database =firebase.database();
+     var userId = firebase.auth().currentUser.uid;
+     var ref =database.ref('fav/'+ userId);
+     //grab dimsum as key
+     var childKey = snapshot.child("/BreakfastCards/prata").key; 
+     console.log(childKey );
+     //push selected fav's info into fav db
+     ref.child(childKey).set(snapshot.val());
   });
   }
 

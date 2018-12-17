@@ -37,8 +37,8 @@
       <ion-row>
         <ion-col> 
   
-          <ion-card (click)="direct(item.name)" class="bfcard" *ngFor="let item of FilteredLunchdinnerCards; let i = index; ">
-            <img src="{{ item.photo }}" alt="">
+          <ion-card  class="bfcard" *ngFor="let item of FilteredLunchdinnerCards; let i = index; ">
+            <img (click)="direct(item.name)" src="{{ item.photo }}" alt="">
             <div class="info" >
             <h2 class="name">{{ item.name }}</h2>
             <h3 class="cuisine">{{ item.cuisine }}</h3>

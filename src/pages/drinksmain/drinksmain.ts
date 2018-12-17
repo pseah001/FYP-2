@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as _ from 'lodash';
-import { KopicPage } from '../kopic/kopic';
-import { KopioPage } from '../kopio/kopio';
 import { KopiPage } from '../kopi/kopi';
+import { TehPage } from '../teh/teh';
+import { MiloPage } from '../milo/milo';
+import { BundungPage } from '../bundung/bundung';
+import { HaliaPage } from '../halia/halia';
 
 
 @IonicPage()
@@ -16,7 +18,7 @@ export class DrinksmainPage {
   BreakfastCards: any;
   FilteredBreakfastCards: any;
   //filter properties
-  Type: string;
+  type: string;
   dietary: string;
   //active filter rules
   filters = {};
@@ -34,14 +36,25 @@ export class DrinksmainPage {
           this.navCtrl.setRoot(KopiPage);
            break; 
         } 
-        case "Kopi-O": { 
-          this.navCtrl.setRoot(KopioPage);
+
+        case "Teh": { 
+          this.navCtrl.setRoot(TehPage);
            break; 
         }
-        case "Kopi-C": { 
-          this.navCtrl.setRoot(KopicPage);
+        case "Milo": { 
+          this.navCtrl.setRoot(MiloPage);
            break; 
         } 
+        case "Bandung": { 
+          this.navCtrl.setRoot(BundungPage);
+           break; 
+        } 
+        case "Teh Halia": { 
+          this.navCtrl.setRoot(HaliaPage);
+           break; 
+        } 
+
+
 
         default: { 
           console.log("Invalid choice"); 
@@ -56,18 +69,22 @@ export class DrinksmainPage {
       this.database.list('/Drinkscards')
       .valueChanges().subscribe( list=> {
           this.BreakfastCards = list;
-          this.applyFilters()
+          console.log("Invalid choice"); 
+          this.applyFilters();
+          console.log("opps"); 
   
       })
     }
   
   
     private applyFilters(){
+      console.log("opps2"); 
       this.FilteredBreakfastCards = _.filter(this.BreakfastCards, _.conforms(this.filters))
     }
     
    //filter property by equality to rule
    filterExact(property: string, rule: any){
+    console.log("opps3"); 
      this.filters[property] =val => val ==rule
      this.applyFilters()
    }

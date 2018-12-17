@@ -7,31 +7,32 @@
 
 <ion-content no-padding>
 <div class="wrapper">
-  <form #loginForm="ngForm" novalidate>
+    <img class="logo" src="assets/imgs/logo-login.png" alt="">   
+    <ion-icon class="back" (click)="back()" name="arrow-dropleft-circle"></ion-icon>
   <ion-list no-lines>
   <ion-item>
       <ion-label>Email Address</ion-label>
         <ion-input type="text" [(ngModel)]="user.email"></ion-input>
     </ion-item>
-    <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+<!--     <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
 				Username is required
 			</p>
-
+ -->
     
     <ion-item>
       <ion-label>Password</ion-label>
       <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
-    <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+<!--     <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
 				Password is required
-    </p>
+    </p> -->
     </ion-list>
 
   <button ion-button block outline color="light" (click)="register(user)">Join us now!</button>
   <div>
 			<p ion-text color="danger" padding-left>{{message}}</p>
 	</div>
-</form>
+
  <hr>
  <ion-row>
    <ion-col col-sm-4>
@@ -50,5 +51,5 @@
     <button ion-button block type="submit" class="twitter-button" (click)="tryTwitterLogin()">Register with Twitter</button>
     <button ion-button block type="submit" class="google-button"  (click)="tryGoogleLogin()">Register with Google</button> -->
     <p>Already have an account? <a (click)="goLoginPage()">Try to Log in</a></p>
-  </div>
+</div>
 </ion-content>

@@ -1,7 +1,11 @@
 page-login {
+   .logo{
+       margin: auto;
+       padding-bottom: 20px;
+   }
 
     .wrapper{
-        padding: 300px 50px;
+        padding: 180px 50px;
         background-color: color($colors, danger);
         height: 100%;
     }

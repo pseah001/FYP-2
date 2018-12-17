@@ -4,15 +4,117 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!--
+  Generated template for the KopicPage page.
 
-  <ion-navbar>
-    <ion-title>kopi</ion-title>
-  </ion-navbar>
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 
-</ion-header>
+<ion-content no-padding>
+    <ion-card class="dimsum" *ngFor="let item of Cards;let i = index;">
+      <ion-icon (click)="back()" name="arrow-dropleft-circle"></ion-icon>
+            <img class="mainimg" src="{{ item.photo }}" alt="">
+        <ion-card class="info">
+          <ion-row>
+            <ion-col col-10>
+              <h2 class="name">{{ item.name }}{{ milkvalue }}{{ icevalue }}{{ sugarvalue }}</h2>
+            </ion-col>
+           
+            <ion-col col-2>
+                <img class="coin" src="assets/imgs/coin.png" alt="">
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4>
+              <p class="cuisine">{{ item.type }}</p> 
+            </ion-col>
+            <ion-col col-8>
 
+              </ion-col>
+          </ion-row>
 
-<ion-content padding>
+          <ion-row>
+              <ion-col> 
+                  <ion-item>
+                      <ion-label class="sugar">Milk Options </ion-label> 
+                      <ion-range min="0" max="20" step="10" snaps="true" color="secondary"
+                        [(ngModel)]="milklevel"
+                        (ngModelChange)="onChangeMilk()">
+                        
+                         <!-- <ion-label range-left>0%</ion-label>
+                         <ion-label range-right>100%</ion-label> -->
+                      </ion-range>
+                   </ion-item>      
+              </ion-col>
+          </ion-row>
+           <ion-row class="timeline-labels">
+              <ion-col col-4>No Milk</ion-col>
+              <ion-col col-4>Evaporated Milk</ion-col>
+              <ion-col col-4>Condensed Milk</ion-col>
+          </ion-row>
 
+          <ion-row>
+              <ion-col> 
+                  <ion-item>
+                      <ion-label class="sugar">Sugar level </ion-label> 
+                      <ion-range min="0" max="30" step="10" snaps="true" color="secondary"
+                        [(ngModel)]="sugarlevel"
+                        (ngModelChange)="onChangeSugar()">
+                         <ion-label range-left>0%</ion-label>
+                         <ion-label range-right>100%</ion-label>
+                      </ion-range>
+                   </ion-item>
+                
+              </ion-col>
+            </ion-row> 
+
+            <ion-row>
+                <ion-col> 
+                    <ion-item>
+                        <ion-label class="sugar">Ice level </ion-label> 
+                        <ion-range min="0" max="10" step="10" snaps="true" color="secondary"
+                          [(ngModel)]="icelevel"
+                          (ngModelChange)="onChangeice()">
+                           <ion-label range-left>Hot</ion-label>
+                           <ion-label range-right>Cold</ion-label>
+                        </ion-range>
+                     </ion-item>
+                  
+                </ion-col>
+              </ion-row> 
+
+          <ion-row>
+            <ion-col> 
+              <h3 class="what">{{ item.what }}</h3>
+              
+            </ion-col>
+          </ion-row> 
+
+          <ion-row>
+              <ion-col> 
+                <h2 class="header">Must Try</h2>
+                <h3 class="description">{{ item.varieties }}</h3> 
+              </ion-col>
+          </ion-row> 
+          <ion-row>
+              <ion-col> 
+                <h2 class="header">Traditional Singaporean Roasted Coffee</h2>
+                <h3 class="description">Coffee beans are wok-roasted with sugar, margarine and at times maize.  The beans are then grounded and brewed with a sock like clothstrainerTypically Served in thick white china cups or a to go plastic bag.</h3> 
+              </ion-col>
+          </ion-row> 
+      
+        </ion-card>
+    </ion-card>
+    <ion-fab class="fav" top right [hidden]="favorite">
+        <button ion-fab (click)="addToFavorites()">
+          <ion-icon color="secondary" class="heart" name="heart-outline"></ion-icon>
+        </button>
+      </ion-fab>
+      <ion-fab class="fav" top right *ngIf="favorite">
+          <button ion-fab>
+            <ion-icon color="secondary" class="heart" name="heart"></ion-icon>
+          </button>
+      </ion-fab>
 </ion-content>
+

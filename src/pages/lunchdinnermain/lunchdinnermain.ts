@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as _ from 'lodash';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { PadangPage } from '../padang/padang';
-import { LemakPage } from '../lemak/lemak';
 import { BiryaniPage } from '../biryani/biryani';
 import { LormeePage } from '../lormee/lormee';
 import { CurrychickenPage } from '../currychicken/currychicken';
@@ -44,10 +43,6 @@ export class LunchdinnermainPage implements OnInit {
         this.navCtrl.setRoot(PadangPage);
          break; 
       } 
-      case "Nasi Lemak": { 
-        this.navCtrl.setRoot(LemakPage);
-         break; 
-      }
       case "Nasi Biryani": { 
         this.navCtrl.setRoot(BiryaniPage);
          break; 
@@ -60,7 +55,7 @@ export class LunchdinnermainPage implements OnInit {
         this.navCtrl.setRoot(ChickenricePage);
          break; 
       }  
-      case "Curry Chicken": { 
+      case "Curry": { 
         this.navCtrl.setRoot(CurrychickenPage);
          break; 
       }  

@@ -1,4 +1,35 @@
 page-coffee {
+    #header{
+        height: 120px;
+    }
+    .welcome{
+        position: absolute;
+        top: 8%;
+        font-size: 30px;
+        width: 100%;
+        font-weight: 900;
+        left: 10%;
+        color: color($colors, primary);
+        font-family: Open sans;
+        letter-spacing: 1px;
+        transform: scale(1, 1.2);   
+        text-transform: uppercase;
+        padding: 10px;
+    }
+    .appname{
+        position: absolute;
+        top: 12%;
+        font-size: 20px;
+        width: 100%;
+        font-weight: 400;
+        left: 10%;
+        color: color($colors, secondary);
+        font-family: Open sans;
+        letter-spacing: 1px;
+        transform: scale(1, 1.1); 
+        margin-top: 2px;
+        padding:10px;
+    }
     .card-md {
         margin:0px;
         width: calc(100%);

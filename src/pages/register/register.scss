@@ -1,7 +1,20 @@
 page-register {
+    .logo{
+        margin: auto;
+        padding-bottom: 20px;
+    }
+    .back{
+        font-size: 40px;
+        /* margin-top: -100px; */
+        z-index: 2;
+        position: absolute;
+        padding: 20px;
+        top: 10px;
+        left: 10px;
+    }
     .wrapper{
-        padding: 300px 50px;
-        background-color: color($colors, danger);
+        padding: 180px 50px;
+        background-color: color($colors, primary);
         height: 100%;
     }
     ion-item{
@@ -25,6 +38,7 @@ page-register {
         text-align: center;
         padding-top: 20px;
         font-size: 18px;
+        color: color($colors, danger)!important;
     }
     p,
 	ion-card-header.card-header {
@@ -35,7 +49,7 @@ page-register {
 	}
     button {
         background-color: white !important;
-        color: color($colors, primary)!important;
+        color: color($colors, danger)!important;
         margin: auto!important;
         font-size: 16px!important;
         margin-top: 20px!important;     

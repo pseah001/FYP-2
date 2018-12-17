@@ -6,6 +6,7 @@ import { BeehoonPage } from '../beehoon/beehoon';
 import { RotiprataPage } from '../rotiprata/rotiprata';
 import { KayatoastPage } from '../kayatoast/kayatoast';
 import * as _ from 'lodash';
+import { LemakPage } from '../lemak/lemak';
 
 
 @IonicPage()
@@ -39,22 +40,26 @@ export class BreakfastmainPage implements OnInit {
   direct(item_key){
 
     switch(item_key) { 
-      case "Bee Hoon": { 
+      case "beehoon": { 
         this.navCtrl.setRoot(BeehoonPage);
          break; 
       } 
-      case "Dim Sum": { 
+      case "dimsum": { 
         this.navCtrl.setRoot(DimsumPage);
          break; 
       }
-      case "Roti Prata": { 
+      case "prata": { 
         this.navCtrl.setRoot(RotiprataPage);
          break; 
       } 
-      case "Kaya Toast": { 
+      case "toast": { 
         this.navCtrl.setRoot(KayatoastPage);
          break; 
-      }  
+      } 
+      case "Nasi Lemak": { 
+        this.navCtrl.setRoot(LemakPage);
+         break; 
+      } 
       default: { 
         console.log("Invalid choice"); 
         break;              

@@ -1,0 +1,57 @@
+<!--
+  Generated template for the BundungPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content no-padding>
+    <ion-card class="dimsum" *ngFor="let item of Cards;let i = index;">
+      <ion-icon (click)="back()" name="arrow-dropleft-circle"></ion-icon>
+            <img class="mainimg" src="{{ item.photo }}" alt="">
+        <ion-card class="info">
+          <ion-row>
+            <ion-col col-10>
+              <h2 class="name">{{ item.name }}</h2>
+            </ion-col>
+           
+            <ion-col col-2>
+                <img class="coin" src="assets/imgs/coin.png" alt="">
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4>
+              <p class="cuisine">{{ item.type }}</p> 
+            </ion-col>
+            <ion-col col-8>
+
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col> 
+                <h2 class="header">Varieties</h2>
+                <h3 class="description">Grass Jelly, Milo Bandungs</h3> 
+              </ion-col>
+          </ion-row> 
+
+          <ion-row>
+              <ion-col> 
+                <h3 class="description">It consists of evaporated milk or condensed milk flavoured with rose cordial syrup, giving it a pink colour. The drink is an adaptation of rose milk served in India.</h3> 
+              </ion-col>
+          </ion-row> 
+
+
+        </ion-card>
+    </ion-card>
+    <ion-fab class="fav" top right [hidden]="favorite">
+        <button ion-fab (click)="addToFavorites()">
+          <ion-icon color="secondary" class="heart" name="heart-outline"></ion-icon>
+        </button>
+      </ion-fab>
+      <ion-fab class="fav" top right *ngIf="favorite">
+          <button ion-fab>
+            <ion-icon color="secondary" class="heart" name="heart"></ion-icon>
+          </button>
+      </ion-fab>
+</ion-content>
+

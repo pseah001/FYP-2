@@ -17,7 +17,7 @@ export class CurrychickenPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public database: AngularFireDatabase,private favoriteservice: FavouriteProvider) {
   // retrieve data from BreakfastCards in firebase
   database.list('/LunchdinnerCards',
-  ref => ref.orderByChild('name').equalTo('Curry Chicken'))
+  ref => ref.orderByChild('name').equalTo('Curry'))
  
   .valueChanges().subscribe(
     list=> {
@@ -29,6 +29,15 @@ export class CurrychickenPage {
     firebase.database().ref(`/LunchdinnerCards/Curry`).once('value').then(snapshot => {
     console.log(snapshot.val().name );
     this.favorite = this.favoriteservice.isFavorite(snapshot.val().name);
+        //create fav in database with specific userid as keys
+   var database =firebase.database();
+   var userId = firebase.auth().currentUser.uid;
+   var ref =database.ref('fav/'+ userId);
+   //grab dimsum as key
+   var childKey = snapshot.child("/LunchdinnerCards/Curry").key; 
+   console.log(childKey );
+   //push selected fav's info into fav db
+   ref.child(childKey).set(snapshot.val());
   });
  
 }

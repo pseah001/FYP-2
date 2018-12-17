@@ -7,18 +7,9 @@
 <ion-content no-padding>
     <ion-card class="dimsum" *ngFor="let item of DimsumCards;let i = index;">
       <ion-icon (click)="back()" name="arrow-dropleft-circle"></ion-icon>
-      <ion-slides pager>
-          <ion-slide>
+
             <img class="mainimg" src="{{ item.photo }}" alt="">
-          </ion-slide>
-          <ion-slide>
-              <img class="mainimg" src="{{ item.photo }}" alt="">
-          </ion-slide>
-          <ion-slide>
-              <img class="mainimg" src="{{ item.photo }}" alt="">
-          </ion-slide>
-        </ion-slides>
-      
+
         <ion-card class="info">
           <ion-row>
             <ion-col col-9>
@@ -51,12 +42,7 @@
                 <h3 class="description">{{ item.varieties }}</h3> 
               </ion-col>
           </ion-row> 
-          <ion-row>
-              <ion-col> 
-                <h2 class="header">Dare Devils</h2>
-                <h3 class="description">Phoenix Claws/fèngzhuǎ</h3> 
-              </ion-col>
-          </ion-row> 
+
           <div no-padding>
               <ion-segment [(ngModel)]="tabs">
                 <ion-segment-button value="origin">
@@ -93,21 +79,15 @@
               <ion-list *ngSwitchCase="'howtoeat'">
                 <ion-item>
                   <ion-thumbnail item-start>
-                      <ion-row class="chopsticks">
-                          <ion-col col-2>
-                              <img  src="assets/imgs/chopsticks.png" alt="">
-                          </ion-col>
-                          <ion-col col-10>
-                            <p>Like most Chinese cuisines, eating with a chopstick is a must!</p>
-                            </ion-col>
-                      </ion-row>
+
                       <h2 class="header">Best Paired With</h2>
                       <ion-row no-padding>    
                           <ion-col class="variety" col-2>
                               <img src="assets/imgs/tea-cup.png" alt="">                
                           </ion-col>
                           <ion-col class="variety" col-10> 
-                              <p>Oolong Tea, Pu-erh tea, Chrysanthemum tea</p>
+                              <p>Classic Kopi/Coffee or Teh/Tea of choice</p>
+                              <p>Milo is the go to for Children</p>
                           </ion-col>
                       </ion-row>
                       <ion-row no-padding>    
@@ -115,7 +95,7 @@
                               <img src="assets/imgs/condiments.png" alt="">                
                           </ion-col>
                           <ion-col class="variety" col-10> 
-                              <p>Vinegar with ginger and chilli sauce is common. Some Dimsum places creates in-house chilli dippings. </p>
+                              <p>Season soft boiled eggs with dark soy sauce and pepper. Remember to dip your toast in for the traditional eating experience </p>
                           </ion-col>
                       </ion-row>
                   </ion-thumbnail>

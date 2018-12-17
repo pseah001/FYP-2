@@ -44,9 +44,10 @@ import { LormeePageModule } from '../pages/lormee/lormee.module';
 import { CrabPageModule } from '../pages/crab/crab.module';
 import { ChickenricePageModule } from '../pages/chickenrice/chickenrice.module';
 import { KopiPageModule } from '../pages/kopi/kopi.module';
-import { KopicPageModule } from '../pages/kopic/kopic.module';
-import { KopioPageModule } from '../pages/kopio/kopio.module';
-
+import { TehPageModule } from '../pages/teh/teh.module';
+import { MiloPageModule } from '../pages/milo/milo.module';
+import { BundungPageModule } from '../pages/bundung/bundung.module';
+import { HaliaPageModule } from '../pages/halia/halia.module';
 
 @NgModule({
   declarations: [
@@ -83,9 +84,11 @@ import { KopioPageModule } from '../pages/kopio/kopio.module';
     CrabPageModule,
     ChickenricePageModule,
     KopiPageModule,
-    KopicPageModule,
-    KopioPageModule
-    
+    TehPageModule,
+    MiloPageModule,
+    BundungPageModule,
+    HaliaPageModule
+
 
 
   ],
