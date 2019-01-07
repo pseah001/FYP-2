@@ -16,9 +16,7 @@ import { MainPageModule } from '../pages/main/main.module';
 import { PrimarytabsPageModule } from '../pages/primarytabs/primarytabs.module';
 import { CoffeePageModule } from '../pages/coffee/coffee.module';
 import { DrinksmainPageModule } from '../pages/drinksmain/drinksmain.module';
-
 import { BreakfastmainPageModule } from '../pages/breakfastmain/breakfastmain.module';
-
 import { Camera } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
@@ -48,6 +46,8 @@ import { TehPageModule } from '../pages/teh/teh.module';
 import { MiloPageModule } from '../pages/milo/milo.module';
 import { BundungPageModule } from '../pages/bundung/bundung.module';
 import { HaliaPageModule } from '../pages/halia/halia.module';
+import { MomentModule } from 'angular2-moment';
+
 
 @NgModule({
   declarations: [
@@ -87,7 +87,9 @@ import { HaliaPageModule } from '../pages/halia/halia.module';
     TehPageModule,
     MiloPageModule,
     BundungPageModule,
-    HaliaPageModule
+    HaliaPageModule,
+    MomentModule,
+
 
 
 
@@ -109,6 +111,7 @@ import { HaliaPageModule } from '../pages/halia/halia.module';
     AuthService,
     UserService,
     GooglePlus,
+
     
     
     {provide: ErrorHandler, useClass: IonicErrorHandler},

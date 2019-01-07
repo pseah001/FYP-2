@@ -7,28 +7,28 @@
 
 <ion-content no-padding>
 <div class="wrapper">
-    <img class="logo" src="assets/imgs/logo-login.png" alt="">   
-    <ion-icon class="back" (click)="back()" name="arrow-dropleft-circle"></ion-icon>
+  <img class="logo" src="assets/imgs/logo-login.png" alt="">   
+  <ion-icon class="back" (click)="back()" name="arrow-dropleft-circle"></ion-icon>
+
   <ion-list no-lines>
-  <ion-item>
-      <ion-label>Email Address</ion-label>
-        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
     </ion-item>
-<!--     <p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
-				Username is required
-			</p>
- -->
     
+    <ion-item>
+      <ion-label>Email Address</ion-label>
+      <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+
     <ion-item>
       <ion-label>Password</ion-label>
       <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
-<!--     <p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
-				Password is required
-    </p> -->
-    </ion-list>
+  </ion-list>
 
-  <button ion-button block outline color="light" (click)="register(user)">Join us now!</button>
+  <button ion-button block outline color="light" (click)="signup()">Join us now!</button>
+
   <div>
 			<p ion-text color="danger" padding-left>{{message}}</p>
 	</div>

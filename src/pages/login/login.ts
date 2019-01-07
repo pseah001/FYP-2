@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, IonicPage } from 'ionic-angular';
+import { NavController, NavParams, IonicPage, ToastController } from 'ionic-angular';
 import { User } from '../../models/user';
 import {AngularFireAuth} from "angularfire2/auth";
 import { AuthService } from '../core/auth.service';
 import { PrimarytabsPage } from '../primarytabs/primarytabs';
 import { Facebook } from '@ionic-native/facebook';
+import firebase from 'firebase';
 
 
 @IonicPage()
@@ -22,11 +23,12 @@ export class LoginPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public authService: AuthService,
-    public facebook: Facebook
+    public facebook: Facebook,
+    public toastCtrl: ToastController
    ) {
   }
 
-  async login(user: User) {
+/*   async login(user: User) {
     try{
       const result= await this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
       
@@ -37,6 +39,29 @@ export class LoginPage {
     catch(e){
       console.error(e);
     }
+  }
+ */
+  login(){
+
+    firebase.auth().signInWithEmailAndPassword(this.user.email, this.user.password)
+    .then((user) => {
+      console.log(user)
+
+      this.toastCtrl.create({
+        message: "Welcome " + user.user.displayName,
+        duration: 3000
+      }).present();
+
+      this.navCtrl.setRoot(PrimarytabsPage)
+
+    }).catch((err) => {
+      console.log(err)
+      this.toastCtrl.create({
+        message: err.message,
+        duration: 3000
+      }).present();
+    })
+
   }
 
   register(){

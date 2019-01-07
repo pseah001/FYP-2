@@ -47,21 +47,28 @@ async takephoto(){
       mediaType: this.camera.MediaType.PICTURE
     }
 
-  
+
 
  this.camera.getPicture(options).then((imageData) => {
-
+/*   console.log('hi');
+    this.photos = new Array<string>();
+    this.cropService
+    .crop(imageData, {quality: 75})
+    .then((newImage) => {
+      this.photos.push(newImage);
+    });
+    console.log('hi2'); */
   this.loading = this.loadingCtrl.create({
     content: 'Please wait...'
   });
   this.loading.present();
 
-  this.selectedPhoto  = this.dataURItoBlob('data:image/jpeg;base64,' + imageData);
+  this.selectedPhoto = this.dataURItoBlob('data:image/jpeg;base64,' + imageData);
+  this.upload(); 
 
-  this.upload();
 }, (err) => {
   console.log('error', err);
-});
+}); 
 
 }
 
@@ -77,7 +84,7 @@ dataURItoBlob(dataURI) {
 //uploading to firebase
 upload() {
   if (this.selectedPhoto) {
-    var uploadTask = firebase.storage().ref().child('uploaded.jpeg').put(this.selectedPhoto);
+    var uploadTask = firebase.storage().ref('feed').child('uploaded.jpeg').put(this.selectedPhoto);
     uploadTask.then(this.onSuccess, this.onError);
   }
 }
@@ -100,7 +107,7 @@ presentActionSheet() {
       {
         text: 'Take a picture',
         handler: () => {
-          this.takePicture();
+          this.takephoto();
         }
       },
       {
@@ -122,6 +129,9 @@ openImagePicker(){
   this.imagePicker.getPictures(options)
   .then((results) => {
     this.reduceImages(results).then(() => {
+      
+  this.selectedPhoto = this.dataURItoBlob('data:image/jpeg;base64,' + results);
+  this.upload(); 
       console.log('all images cropped!!');
     });
   }, (err) => { console.log(err) });
@@ -133,6 +143,8 @@ reduceImages(selected_pictures: any) : any{
       return this.cropService.crop(item, {quality: 75}).then(cropped_image => this.photos.push(cropped_image));
     });
   }, Promise.resolve());
+
+  
 }
 
 takePicture(){
@@ -141,6 +153,7 @@ takePicture(){
     correctOrientation: true
   };
 
+  //crop
   this.camera.getPicture(options)
   .then((data) => {
     this.photos = new Array<string>();
@@ -152,6 +165,9 @@ takePicture(){
   }, function(error) {
     console.log(error);
   });
+
+
+  
 }
 
 /*
@@ -217,8 +233,6 @@ uploadImageToFirebase(image){
   });
 */
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CameraPage');
-  }
+
 
 }
